@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  event_type: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  google_maps_link: MyString
+  phone: MyString
+  event_date_start: 2024-04-28 15:57:22
+  event_date_end: 2024-04-28 15:57:22
+  user: one
+  group: one
+
+two:
+  name: MyString
+  event_type: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  google_maps_link: MyString
+  phone: MyString
+  event_date_start: 2024-04-28 15:57:22
+  event_date_end: 2024-04-28 15:57:22
+  user: two
+  group: two
