@@ -1,0 +1,32 @@
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <a href="/" class="btn btn-ghost text-xl">daisyUI</a> <!-- Assuming the root path for the logo -->
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li><a href="#">Link</a></li>
+      <% if user_signed_in? && current_user.admin? %>
+      <li>
+        <details>
+          <summary>
+            Parent
+          </summary>
+          <ul class="p-2 bg-base-100 rounded-t-none">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+          </ul>
+        </details>
+      </li>
+    <% end %>
+      <% if user_signed_in? %>
+        <li><a href="<%= edit_user_registration_path %>">Edit Profile</a></li>
+        <li>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li><a href="<%= new_user_session_path %>">Login</a></li>
+        <li><a href="<%= new_user_registration_path %>">Signup</a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
