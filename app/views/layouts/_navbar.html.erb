@@ -8,18 +8,18 @@
         <li><a href="#">Events</a></li>
       <% end %>
       <% if user_signed_in? && current_user.admin? %>
-      <li>
-        <details>
-          <summary>
-            Admin Actions
-          </summary>
-          <ul class="p-2 bg-base-100 rounded-t-none">
-            <li><a href="#">Manage Groups</a></li>
-            <li><a href="#">Manage Events</a></li>
-          </ul>
-        </details>
-      </li>
-    <% end %>
+        <li>
+          <details>
+            <summary>
+              Admin Actions
+            </summary>
+            <ul class="p-2 bg-base-100 rounded-t-none">
+              <li><a href="#">Manage Groups</a></li>
+              <li><a href="#">Manage Events</a></li>
+            </ul>
+          </details>
+        </li>
+      <% end %>
       <% if user_signed_in? %>
         <li><a href="<%= edit_user_registration_path %>">Edit Profile</a></li>
         <li>

@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
-
   <body>
     <%= render "layouts/navbar" %>
     <div data-controller="flash" data-flash-timeout-value="5000">
@@ -28,6 +26,6 @@
           Built with love by the tmjj team.
         </p>
       </div>
-   </footer>
+    </footer>
   </body>
 </html>
