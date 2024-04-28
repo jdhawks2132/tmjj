@@ -11,6 +11,9 @@ class User < ApplicationRecord
 
   has_many :memberships
   has_many :groups, through: :memberships
+  has_many :events
+  has_many :event_participants
+  has_many :participated_events, through: :event_participants, source: :event
 
   def set_default_role
     self.role ||= :user
