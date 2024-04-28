@@ -12,9 +12,9 @@
 
   <body>
     <%= render "layouts/navbar" %>
-    <div data-controller="flash" data-flash-timeout-value="5000" class="text-center text-accent text-xl font-bold">
-      <p class="notice" data-flash-target="notice"><%= notice %></p>
-      <p class="alert" data-flash-target="alert"><%= alert %></p>
+    <div data-controller="flash" data-flash-timeout-value="5000">
+      <p class="notice w-full text-center text-accent text-xl font-bold" data-flash-target="notice"><%= notice %></p>
+      <p class="alert w-full text-center text-accent text-xl font-bold" data-flash-target="alert"><%= alert %></p>
     </div>
     <main class='min-h-screen p-11'>
       <%= yield %>
