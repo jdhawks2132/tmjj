@@ -5,6 +5,11 @@ module.exports = {
     './app/javascript/**/*.js',
     './app/views/**/*.erb',
   ],
+  daisyui: {
+    themes: [
+      'synthwave',
+    ]
+  },
   theme: {
     extend: {},
   },
