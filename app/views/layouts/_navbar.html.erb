@@ -1,19 +1,19 @@
 <div class="navbar bg-base-100">
   <div class="flex-1">
-    <a href="/" class="btn btn-ghost text-xl">daisyUI</a> <!-- Assuming the root path for the logo -->
+    <a href="/" class="btn btn-ghost text-xl">TMJJ</a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="#">Link</a></li>
+      <li><a href="#">Events</a></li>
       <% if user_signed_in? && current_user.admin? %>
       <li>
         <details>
           <summary>
-            Parent
+            Admin Actions
           </summary>
           <ul class="p-2 bg-base-100 rounded-t-none">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Manage Groups</a></li>
+            <li><a href="#">Manage Events</a></li>
           </ul>
         </details>
       </li>

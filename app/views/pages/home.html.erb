@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="hero bg-base-100">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">Welcome to TMJJ!</h1>
+      <p class="py-6">Organize and manage your events effortlessly. Plan meetups, track dates, and never miss out on the fun with your friends.</p>
+			<% if user_signed_in? %>
+				<button class="btn btn-primary">Get Started</button>
+			<% else %>
+				<a href="<%= new_user_session_path %>" class="btn btn-primary">Login</a>
+			<% end %>
+    </div>
+  </div>
+</div>

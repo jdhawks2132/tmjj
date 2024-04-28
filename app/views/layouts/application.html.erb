@@ -12,8 +12,22 @@
 
   <body>
     <%= render "layouts/navbar" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div data-controller="flash" data-flash-timeout-value="5000" class="text-center text-accent text-xl font-bold">
+      <p class="notice" data-flash-target="notice"><%= notice %></p>
+      <p class="alert" data-flash-target="alert"><%= alert %></p>
+    </div>
+    <main class='min-h-screen p-11'>
+      <%= yield %>
+    </main>
+    <footer class="p-10 footer bg-base-300 text-base-content footer-center">
+      <div>
+        <p class="text-sm">
+          &copy; 2024 tmjj. All rights reserved.
+        </p>
+        <p class="text-xs">
+          Built with love by the tmjj team.
+        </p>
+      </div>
+   </footer>
   </body>
 </html>
