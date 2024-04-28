@@ -21,7 +21,6 @@
         </li>
       <% end %>
       <% if user_signed_in? %>
-        <li><a href="<%= edit_user_registration_path %>">Edit Profile</a></li>
         <li>
           <%= button_to "Logout", destroy_user_session_path, method: :delete %>
         </li>
