@@ -9,3 +9,6 @@ application.register('hello', HelloController);
 
 import FlashController from './flash_controller';
 application.register('flash', FlashController);
+
+import CollapsibleController from './collapsible_controller';
+application.register('collapsible', CollapsibleController);

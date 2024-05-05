@@ -1,0 +1,30 @@
+<h1 class="text-3xl font-bold mb-4">Events Dashboard</h1>
+<div data-controller="collapsible" class="mb-10">
+  <!-- SVG as a toggle button -->
+  <svg data-action="click->collapsible#toggle" data-collapsible-target="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 cursor-pointer">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6" />
+  </svg>
+  <p data-collapsible-target="helperText" class="text-sm text-gray-600">Show New Event Form</p>
+  <!-- Collapsible content -->
+  <div class="hidden" data-collapsible-target="content">
+    <%= render 'form', event: @event %>
+  </div>
+</div>
+<!-- Events Display -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <% @events.order(event_date_start: :asc).each do |event| %>
+    <div class="card bg-base-300 shadow-xl">
+      <div class="card-body">
+        <img src="<%= asset_path(event_image_path(event)) %>" alt="<%= event.event_type %>" class="w-full h-auto rounded-md">
+        <h2 class="card-title"><%= event.name %></h2>
+        <p>Type: <%= event.event_type.titleize %></p>
+        <p>Start: <%= event.event_date_start.strftime("%B %d, %Y %H:%M") %></p>
+        <p>End: <%= event.event_date_end.strftime("%B %d, %Y %H:%M") %></p>
+        <div class="card-actions justify-end">
+          <%= link_to 'Edit', edit_event_path(event), class: "btn btn-primary" %>
+          <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-error" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

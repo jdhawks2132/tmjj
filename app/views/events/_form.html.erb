@@ -1,0 +1,50 @@
+<div class="card bg-base-100 shadow-xl p-4 my-4">
+  <h2 class="card-title">Create New Event</h2>
+  <%= form_with(model: Event.new, local: true) do |form| %>
+    <div class="form-control">
+      <%= form.label :name, 'Event Name:', class: 'label' %>
+      <%= form.text_field :name, class: 'input input-bordered w-full' %>
+    </div>
+    <div class="form-control">
+      <%= form.label :event_type, 'Event Type:', class: 'label' %>
+      <%= form.select :event_type, Event.event_types.keys.map { |type| [type.titleize, type] }, {}, { class: "select select-bordered w-full" } %>
+    </div>
+    <div class="form-control">
+      <%= form.label :street, 'Street Address:', class: 'label' %>
+      <%= form.text_field :street, class: 'input input-bordered w-full' %>
+    </div>
+    <div class="form-control">
+      <%= form.label :city, 'City:', class: 'label' %>
+      <%= form.text_field :city, class: 'input input-bordered w-full' %>
+    </div>
+    <div class="form-control">
+      <%= form.label :state, 'State:', class: 'label' %>
+      <%= form.text_field :state, class: 'input input-bordered w-full' %>
+    </div>
+    <div class="form-control">
+      <%= form.label :zip, 'ZIP Code:', class: 'label' %>
+      <%= form.text_field :zip, class: 'input input-bordered w-full' %>
+    </div>
+    <div class="form-control">
+      <%= form.label :google_maps_link, 'Google Maps Link:', class: 'label' %>
+      <%= form.text_field :google_maps_link, class: 'input input-bordered w-full' %>
+    </div>
+    <div class="form-control">
+      <%= form.label :phone, 'Contact Phone:', class: 'label' %>
+      <%= form.text_field :phone, class: 'input input-bordered w-full' %>
+    </div>
+    <div class="form-control">
+      <%= form.label :event_date_start, 'Start Date and Time:', class: 'label' %>
+      <%= form.datetime_local_field :event_date_start, class: 'input input-bordered w-full' %>
+    </div>
+    <div class="form-control">
+      <%= form.label :event_date_end, 'End Date and Time:', class: 'label' %>
+      <%= form.datetime_local_field :event_date_end, class: 'input input-bordered w-full' %>
+    </div>
+    <div class="form-control">
+      <%= form.label :group_id, 'Group:', class: 'label' %>
+      <%= form.collection_select :group_id, Group.all, :id, :name, {}, { class: 'select select-bordered w-full' } %>
+    </div>
+    <%= form.submit 'Create Event', class: 'btn btn-primary mt-4' %>
+  <% end %>
+</div>

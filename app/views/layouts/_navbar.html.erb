@@ -5,7 +5,7 @@
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
       <% if user_signed_in? %>
-        <li><a href="#">Events</a></li>
+        <li><a href="/events">Events</a></li>
       <% end %>
       <% if user_signed_in? && current_user.admin? %>
         <li>
@@ -14,8 +14,7 @@
               Admin Actions
             </summary>
             <ul class="p-2 bg-base-100 rounded-t-none">
-              <li><a href="#">Manage Groups</a></li>
-              <li><a href="#">Manage Events</a></li>
+              <li><a href="/admin/dashboard">Admin Dashboard</a></li>
             </ul>
           </details>
         </li>
